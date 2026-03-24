@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock title %}
+{% block body %}
+
+ 
+    <div class="container my-3">
+
+        <h2>Update Your TODO</h2>
+        <form action="/update/{{ todo.sno }}" method="POST">
+            <div class="mb-3">
+                <label for="title">TODO Title</label>
+                <input type="text" class="form-control" name="title" id="title" value="{{todo.title}}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="desc">TODO Description</label>
+                <input type="text" class="form-control" name="desc" value="{{todo.desc}}" id="desc">
+            </div>
+            <button type="submit" class="btn  btn-outline-dark">Update</button>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    
+{% endblock body %}
